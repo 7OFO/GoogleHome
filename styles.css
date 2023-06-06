@@ -1,16 +1,45 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: #111;
+body {
+    background-color: #202124;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
 }
 
-.main{
+body::-webkit-scrollbar,
+.projectMediaContainer::-webkit-scrollbar {
+    width: 11px;
+    height: 10px;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #333 #555;
+}
+
+body::-webkit-scrollbar-track,
+.projectMediaContainer::-webkit-scrollbar-track {
+    background: #444;
+}
+
+body::-webkit-scrollbar-thumb,
+.projectMediaContainer::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 6px;
+    border: 3px solid #666;
+}
+
+b{
+    color: #60ffa7b4;
+}
+
+.main {
     width: 100vw;
-    height: 90vh;
+    height: 85vh;
     background-color: #202124;
     display: flex;
     flex-direction: column;
@@ -18,16 +47,26 @@ body{
     justify-content: center;
 }
 
-.logo{
-    min-height: 90px;
-    min-width: 300px;
-    background-image: url('./assets/logo.png');
+.avatar {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    border: 2px solid #60ffa7b4;
+    background-image: url('./assets/avatar.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    transition: all ease 0.3s;
+    animation: avatarAnimation infinite alternate 2s;
+    cursor: pointer;
 }
 
-.search--main{
+.avatar:hover {
+    transform: scale(1.1);
+    transition: all ease 0.3s;
+}
+
+.search--main {
     background-color: #202124;
     height: 50px;
     width: 600px;
@@ -37,9 +76,10 @@ body{
     margin-top: 50px;
     align-items: center;
     padding-inline: 10px;
+    z-index: 1;
 }
 
-.search--input{
+.search--input {
     border-style: none;
     outline: none;
     background-color: #00000000;
@@ -50,14 +90,14 @@ body{
     color: #ccc;
 }
 
-.search--main:hover{
+.search--main:hover {
     background-color: #333;
     border-color: #202124;
     box-shadow: 0 2px 5px -2px #111;
 }
 
 .search--logo,
-.search--voice{
+.search--voice {
     fill: #999;
     height: 24px;
     width: 24px;
@@ -65,7 +105,7 @@ body{
 }
 
 .btn--pesquisar,
-.btn--sorte{
+.btn--sorte {
     width: 140px;
     height: 38px;
     margin: 30px 5px;
@@ -78,8 +118,123 @@ body{
 }
 
 .btn--pesquisar:hover,
-.btn--sorte:hover{
+.btn--sorte:hover {
     border: 1px solid #999;
 }
 
+.dropdown--main {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #333;
+    height: auto;
+    width: 600px;
+    margin-top: 5px;
+    border-radius: 25px;
+    z-index: 0;
+    overflow: hidden;
+}
 
+.dropdown--main a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ccc;
+    height: 50px;
+    padding-left: 30px;
+    line-height: 2.5;
+}
+
+.dropdown--main a img {
+    height: 25px;
+    width: 25px;
+    border-radius: 15px;
+    margin-right: 40px;
+    justify-self: center;
+}
+
+.dropdown--main a:hover {
+    background-color: #444;
+}
+
+.show {
+    visibility: visible !important;
+}
+
+.about,
+.mail {
+    height: 250px;
+    border-top: 2px solid #444;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    line-height: 2.5;
+    font-size: 24px;
+}
+
+.description{
+    color: #fff;
+    align-self: center;
+    text-align: center;
+    max-width: 700px;
+    line-height: 2;
+}
+
+.sub{
+    font-size: 20px;
+}
+
+.projMain{
+    background-color: #333;
+    margin: 50px 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.projInfo{
+    display: flex;
+    flex-direction: column;
+    color: #ccc;
+    width: 700px;
+    margin: 50px;
+}
+
+.projDescription{
+    margin-top: 20px;
+    max-width: 700px;
+}
+
+.projMedia{
+    width: 800px;
+}
+
+.projTech{
+    margin-top: 25px;
+    font-weight: 600;
+    color: #60ffa7;
+}
+
+.projectMediaContainer{
+    width: 800px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+@keyframes avatarAnimation{
+    from{
+        border-color: #60ffa7;
+    }
+    to{
+        border-color: #60ffa76b;
+    }
+}
