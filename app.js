@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
             {
                 id: 1,
                 nome: 'Projeto Streaming NXPLAY LG/SAMSUNG',
-                descricao: 'Projeto de streaming de filmes, séries e canais desenvolvidos para as plataformas LG e Samsung. Este foi meu primeiro projeto e está disponível para milhares de pessoas.',
+                descricao: 'Projeto de streaming de filmes, séries e canais desenvolvidos para as plataformas LG e Samsung. Este foi meu primeiro projeto na empresa NXTV onde eu ainda não estava familiarizado com linguagens para web, até então só havia programado para desktop, foi um projeto onde consegui me destacar dentro da empresa e me tornar de fato um Front-End. Este projeto está disponível para milhares de pessoas.',
                 techs: [
                     'HTML, ',
                     'CSS, ',
@@ -27,21 +27,29 @@ window.addEventListener('load', () => {
                     './assets/Projects/LG/lg-5.jpg',
                     './assets/Projects/LG/lg-6.jpg',
                     './assets/Projects/LG/lg-7.jpg',
+                    './assets/Projects/LG/lg-8.jpg',
+                    './assets/Projects/LG/lg-9.jpg',
                 ]
             },
             {
                 id: 2,
-                nome: 'Projeto Streaming NXKIDS LG/SAMSUNG',
-                descricao: 'Projeto de streaming de filmes, séries e canais infantíl, desenvolvidos para as plataformas LG e Samsung.',
+                nome: 'Projeto Streaming NXKIDS WEB',
+                descricao: 'Projeto de streaming de filmes, séries e canais infantíl, desenvolvidos para satisfazer a demanda de programação infantíl.',
                 techs: [
                     'HTML, ',
                     'CSS, ',
-                    'Javascript, ',
-                    'JQuery'
+                    'PHP',
+                    'Laravel, ',
+                    'JQuery, ',
+                    'Javascript'
                 ],
-                link: '#',
+                link: 'https://nxkids.com.br/',
                 media: [
-                    './assets/Projects/LG/lg-kids-1.jpg',
+                    './assets/Projects/WEB/k1.jpg',
+                    './assets/Projects/WEB/k2.jpg',
+                    './assets/Projects/WEB/k3.jpg',
+                    './assets/Projects/WEB/k4.jpg',
+                    './assets/Projects/WEB/k5.jpg',
                 ]
             }
         ]
@@ -76,16 +84,27 @@ window.addEventListener('load', () => {
         projectDescription.textContent = element.descricao
         const projectTech = document.createElement('p')
         projectTech.className = 'projTech'
+        projectTech.textContent = 'Técnologias usadas : '
         element.techs.forEach(tech => {
             projectTech.textContent += tech
         });
+        const projectLink = document.createElement('a')
+        projectLink.className = 'projLink'
+        projectLink.href = element.link
+        projectLink.textContent = 'Acessar página'
         projectInfo.append(projectTitle)
         projectInfo.append(projectDescription)
         projectInfo.append(projectTech)
+        projectInfo.append(projectLink)
         projectMain.append(projectInfo)
         projectMain.append(projectMediaContainer)
         projectsSection.append(projectMain)
     });
+
+    const avt = document.querySelector('.avatar')
+    avt.addEventListener('click',()=>{
+        window.location.href = 'https://www.linkedin.com/in/fstofoli/'
+    })
 
 
 })

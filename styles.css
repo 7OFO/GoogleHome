@@ -40,24 +40,27 @@ b{
 .main {
     width: 100vw;
     height: 85vh;
+    background-image: url('./assets/bg.jpg');
     background-color: #202124;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 0 -150px 80px -20px #202124;
 }
 
 .avatar {
     height: 180px;
-    width: 180px;
-    border-radius: 50%;
-    border: 2px solid #60ffa7b4;
+    width: 220px;
+    border-radius: 20px;
+    outline: 2px solid #60ffa7b4;
     background-image: url('./assets/avatar.jpg');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
+    background-size: cover;
     transition: all ease 0.3s;
     animation: avatarAnimation infinite alternate 2s;
+    box-shadow: 0 5px 10px #111;
     cursor: pointer;
 }
 
@@ -67,15 +70,15 @@ b{
 }
 
 .search--main {
-    background-color: #202124;
+    background-color: #333;
     height: 50px;
     width: 600px;
     border-radius: 25px;
-    border: 1px solid #999;
     display: flex;
     margin-top: 50px;
     align-items: center;
     padding-inline: 10px;
+    box-shadow: 0 2px 5px -2px #111;
     z-index: 1;
 }
 
@@ -93,7 +96,7 @@ b{
 .search--main:hover {
     background-color: #333;
     border-color: #202124;
-    box-shadow: 0 2px 5px -2px #111;
+    
 }
 
 .search--logo,
@@ -204,7 +207,8 @@ b{
 .projInfo{
     display: flex;
     flex-direction: column;
-    color: #ccc;
+    position: relative;
+    color: #eee;
     width: 700px;
     margin: 50px;
 }
@@ -212,6 +216,7 @@ b{
 .projDescription{
     margin-top: 20px;
     max-width: 700px;
+    font-size: 18px;
 }
 
 .projMedia{
@@ -221,7 +226,7 @@ b{
 .projTech{
     margin-top: 25px;
     font-weight: 600;
-    color: #60ffa7;
+    color: #ccc;
 }
 
 .projectMediaContainer{
@@ -230,11 +235,19 @@ b{
     overflow-x: scroll;
 }
 
+.projLink{
+    text-decoration: none;
+    color: #60ffa7b4;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
 @keyframes avatarAnimation{
     from{
-        border-color: #60ffa7;
+        outline-color: #60ffa7;
     }
     to{
-        border-color: #60ffa76b;
+        outline-color: #60ffa73a;
     }
 }
