@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
             const projectMedia = document.createElement('img')
             projectMedia.className = 'projMedia'
             projectMedia.src = media
-            projectMedia.setAttribute('lazy', 'load')
+            projectMedia.setAttribute('loading', 'lazy')
             projectMediaContainer.append(projectMedia)
         });
         let pos = 0
