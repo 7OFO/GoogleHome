@@ -63,6 +63,4 @@ window.addEventListener('load', () => {
     avt.addEventListener('click',()=>{
         window.location.href = 'https://www.linkedin.com/in/fstofoli/'
     })
-
-
 })

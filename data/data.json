@@ -46,23 +46,18 @@
         },
         {
             "id": 3,
-            "nome": "Projeto Streaming NXKIDS WEB",
-            "descricao": "Projeto de streaming de filmes, séries e canais infantíl, desenvolvidos para satisfazer a demanda de programação infantíl.",
+            "nome": "Projeto Meu Sacolão Mobile",
+            "descricao": "Projeto voltado para organização de compras no supermercado, contando com uma base de dados de produtos, onde o cliente poderá escanear o produto no mercado que por sua vez trará informações sobre o produto,inclusíve a sua média de preço por região.",
             "techs": [
-                "HTML, ",
-                "CSS, ",
-                "PHP",
-                "Laravel, ",
-                "JQuery, ",
-                "Javascript"
+                "NodeJS (back-end), ",
+                "MYSQL (base de dados), ",
+                "Azure  (infra), ",
+                "React-Native  (front-end)"
             ],
-            "link": "https://nxkids.com.br/",
+            "link": "#",
             "media": [
-                "./assets/Projects/WEB/k1.jpg",
-                "./assets/Projects/WEB/k2.jpg",
-                "./assets/Projects/WEB/k3.jpg",
-                "./assets/Projects/WEB/k4.jpg",
-                "./assets/Projects/WEB/k5.jpg"
+                "./assets/Projects/SACOLAO/1.jpg",
+                "./assets/Projects/SACOLAO/2.jpg"
             ]
         }
     ]
