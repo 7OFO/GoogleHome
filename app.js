@@ -1,4 +1,4 @@
-import projectsList from './data/data.json' assert {type: 'json'}
+import projectsList from './data/data.json'
 
 window.addEventListener('load', () => {
     const searchInput = document.querySelector('.search--input')
