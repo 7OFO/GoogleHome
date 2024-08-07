@@ -5,7 +5,7 @@ window.addEventListener('load', async () => {
         dropDownArea.classList.toggle('show')
     })
 
-    projectsList = await fetch('./data/data.json')
+   const projectsList = await fetch('./data/data.json')
         .then(response => response.json())
         .then(data => {
             return data;
