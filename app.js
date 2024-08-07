@@ -1,15 +1,22 @@
-import projectsList from './data/data.json'
-
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     const searchInput = document.querySelector('.search--input')
     const dropDownArea = document.querySelector('.dropdown--main')
     searchInput.addEventListener('click', () => {
         dropDownArea.classList.toggle('show')
     })
 
+    projectsList = await fetch('./data/data.json')
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => {
+            console.error('Error loading JSON:', error);
+        });
+
     const projectsSection = document.querySelector('.projects')
     const ptojectsList = projectsList["projectsList"]
-        
+
 
     ptojectsList.forEach(element => {
         const projectMain = document.createElement('div')
@@ -26,13 +33,13 @@ window.addEventListener('load', () => {
             projectMediaContainer.append(projectMedia)
         });
         let pos = 0
-            const interval = setInterval(() => {
-                console.log(800 * element.media.length)
-                pos >= 800 * element.media.length
+        const interval = setInterval(() => {
+            console.log(800 * element.media.length)
+            pos >= 800 * element.media.length
                 ? pos = 0
                 : pos += 800
-                projectMediaContainer.scrollTo({ left: pos, behavior: 'smooth' })
-            }, 20000 / (element.media.length));
+            projectMediaContainer.scrollTo({ left: pos, behavior: 'smooth' })
+        }, 20000 / (element.media.length));
 
         const projectTitle = document.createElement('h2')
         projectTitle.className = 'projTitle'
@@ -60,7 +67,7 @@ window.addEventListener('load', () => {
     });
 
     const avt = document.querySelector('.avatar')
-    avt.addEventListener('click',()=>{
+    avt.addEventListener('click', () => {
         window.location.href = 'https://www.linkedin.com/in/fstofoli/'
     })
 })
